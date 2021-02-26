@@ -3,7 +3,7 @@ An AWS Lambda function for trading on Coinbase Pro
 
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. 
 
-The `template.yaml` is a template that defines the application's AWS resources.
+The [`template.yaml`](template.yaml) is a template that defines the application's AWS resources.
 
 If you prefer to use an integrated development environment (IDE) to build and test the application, you can use the AWS Toolkit.  
 The AWS Toolkit is an open source plug-in for popular IDEs that uses the SAM CLI to build and deploy serverless applications on AWS. The AWS Toolkit also adds a simplified step-through debugging experience for Lambda function code. See the following links to get started.
@@ -17,7 +17,7 @@ The AWS Toolkit is an open source plug-in for popular IDEs that uses the SAM CLI
 
 This project utilizes a combination of in-template environment variable configuration settings, as well as referenced plaintext strings using [AWS Systems Manager](https://aws.amazon.com/systems-manager/)
 
-To create secrets using the AWS CLI, follow the instructions [here](https://docs.aws.amazon.com/systems-manager/latest/userguide/param-create-cli.html). You will need to populate secrets based on the referenced names in the [`template.yaml`](template.yaml) and make sure to use the same region as specified in the `samconfig.toml`.
+To create secrets using the AWS CLI, follow the instructions [here](https://docs.aws.amazon.com/systems-manager/latest/userguide/param-create-cli.html). You will need to populate secrets based on the referenced names in the [`template.yaml`](template.yaml) and make sure to use the same region as specified in the [`samconfig.toml`](samconfig.toml).
 
 The general syntax of the command to add a secret is:
 
@@ -44,7 +44,7 @@ To use the SAM CLI, you need the following tools.
 * [Python 3 installed](https://www.python.org/downloads/)
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
 
-Note that this project already comes with a `samconfig.toml` file for ease of use. With that file, you can build and deploy with the following:
+Note that this project already comes with a [`samconfig.toml`](samconfig.toml) file for ease of use. With that file, you can build and deploy with the following:
 
 ```sh
 sam build --use-container
