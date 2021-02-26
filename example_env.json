@@ -1,0 +1,8 @@
+{
+  "CoinbaseProTradeBtcFn": {
+    "RUN_MODE": "test",
+    "CBP_API_KEY": "",
+    "CBP_API_KEY_PASSPHRASE": "",
+    "CBP_API_KEY_SECRET": ""
+  }
+}
