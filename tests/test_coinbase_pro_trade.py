@@ -19,7 +19,7 @@ def test_function_returns_success():
 
     # Invoke your Lambda function as you normally usually do. The function will run
     # locally if it is configured to do so
-    response = lambda_client.invoke(FunctionName="CoinbaseProTradeBtcFn")
+    response = lambda_client.invoke(FunctionName="CoinbaseProTradeFn")
 
     # Verify the response
     assert response.get('FunctionError') is None

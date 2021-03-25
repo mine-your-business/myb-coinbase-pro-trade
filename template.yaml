@@ -7,23 +7,24 @@ Description: >
 
 Resources:
   # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-  CoinbaseProTradeBtcFn:
+  CoinbaseProTradeFn:
     Type: AWS::Serverless::Function 
     Properties:
-      CodeUri: coinbase_pro_trade_btc_function
-      Handler: coinbase_pro_trade_btc.app.lambda_handler
+      CodeUri: coinbase_pro_trade_function
+      Handler: coinbase_pro_trade.app.lambda_handler
       Runtime: python3.8
       Timeout: 3
       Environment:
         Variables:
           # If RUN_MODE is 'test', runs in test mode
-          RUN_MODE: "test"
-          TRADES_CURRENCY: BTC
-          TRADES_PRODUCT_ID: BTC-USD
+          RUN_MODE: "production"
+          TRADES_CURRENCY: ETH
+          TRADES_PRODUCT_ID: ETH-USD
           # The maximum number of data points for a single request is 300 candles,
           # so at 1-day granularity you can't have more than 300 days
-          TRADES_DAY_RANGE_EVAL: 250
-          TRADES_FUNCTION: max
+          TRADES_DAY_RANGE_EVAL: 7
+          # Currently supported are: max, average (high)
+          TRADES_FUNCTION: average
           TRADES_TYPE: limit
           # the minimum amount required to trade the specified currency
           TRADES_MIN_AMOUNT: 10.00
@@ -38,6 +39,6 @@ Resources:
           Type: Schedule
           Properties:
             Schedule: cron(30 0 * * ? *)
-            Name: CoinbaseProTradeBtcSchedule
-            Description: execution schedule for exchanging BTC to USD on Coinbase Pro
+            Name: CoinbaseProTradeSchedule
+            Description: execution schedule for exchanging crypto to USD on Coinbase Pro
             Enabled: True
