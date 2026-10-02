@@ -1,4 +1,8 @@
 # myb-coinbase-pro-trade
+
+> [!NOTE]
+> **Archived.** Coinbase retired Coinbase Pro and its API in 2023 (succeeded by Coinbase Advanced Trade), so this code no longer works.
+
 An AWS Lambda function for trading on Coinbase Pro
 
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. 
